@@ -16,7 +16,7 @@ function read(targetFolder, options) {
                const ext = path.extname(path.resolve(targetFolder, el.name)).slice(1);
                let size = '';
                fs.stat(path.resolve(targetFolder, el.name), (err, stats) => {
-                  size = stats.size;
+                  size = stats.size / 1024 + 'kb';
                   console.log(`${name || el.name} - ${ext} - ${size}`)
                });
 
