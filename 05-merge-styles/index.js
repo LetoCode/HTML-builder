@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const fsPromise = require('fs/promises');
-const { resolve } = require('path');
+
 
 const distPath = path.resolve(__dirname, 'project-dist', 'bundle.css');
 const sourceFolder = path.resolve(__dirname, 'styles');
@@ -34,7 +34,7 @@ async function fillCssArray() {
 
 
 function createNewCssFile(data) {
-   fs.writeFile(distPath, data.join(' '), (err) => {
+   fs.writeFile(distPath, data.join('\n'), (err) => {
       if (err) return console.error(err.message);
 
    })
