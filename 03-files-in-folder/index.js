@@ -10,7 +10,7 @@ function read(targetFolder, options) {
       .then(data => {
          for (const el of data) {
             if (el.isDirectory()) {
-               read(path.resolve(targetFolder, el.name), options);
+               //read(path.resolve(targetFolder, el.name), options);
             } else {
                const name = el.name.split('.')[0];
                const ext = path.extname(path.resolve(targetFolder, el.name)).slice(1);
